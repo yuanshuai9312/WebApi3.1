@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "ABenNet.NetCore.WebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/weatherforecast/get",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/weatherforecast/get",
+      "httpPort": 55000
+    }
+  }
+}

@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ABenNet.NetCore.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.BaseApiController.Ok">
+            <summary>
+            以<see cref="T:ABenNet.NetCore.WebApi.Models.ResponseResult`1"/>数据结构的Json输出API结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.BaseApiController.Ok(System.Object)">
+            <summary>
+            以<see cref="T:ABenNet.NetCore.WebApi.Models.ResponseResult`1"/>数据结构的Json输出API结果
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.BaseApiController.Success``1(``0)">
+            <summary>
+            以<see cref="T:ABenNet.NetCore.WebApi.Models.ResponseResult`1"/>数据结构的Json输出操作成功的API结果
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="details"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.BaseApiController.Ok(ABenNet.NetCore.WebApi.Models.ResponseResultCode,System.String)">
+            <summary>
+            </summary>
+            <param name="responseResultCode"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.BaseApiController.Ok``1(ABenNet.NetCore.WebApi.Models.ResponseResultCode,System.String,``0)">
+            <summary>
+            以<see cref="T:ABenNet.NetCore.WebApi.Models.ResponseResult`1"/>数据结构的Json输出API结果
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="responseResultCode"></param>
+            <param name="message"></param>
+            <param name="details"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.BaseApiController.Ok``1(ABenNet.NetCore.WebApi.Models.ResponseResult{``0})">
+            <summary>
+            以<see cref="T:ABenNet.NetCore.WebApi.Models.ResponseResult`1"/>数据结构的Json输出API结果
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ABenNet.NetCore.WebApi.Controllers.v1.WeatherForecastController">
+            <summary>
+            天气预报1.0
+            </summary>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.v1.WeatherForecastController.Get">
+            <summary>
+            获取天气预报详细信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ABenNet.NetCore.WebApi.Controllers.v2.WeatherForecastController">
+            <summary>
+            天气预报2.0
+            </summary>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.v2.WeatherForecastController.Get">
+            <summary>
+            获取天气预报详细信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.v2.WeatherForecastController.SubmitByFromQueryParams(System.String,System.String)">
+            <summary>
+            SubmitByFromQueryJObject多简单类型参数
+            </summary>
+            <param name="orderid"></param>
+            <param name="ordername"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.v2.WeatherForecastController.SubmitByFromBody(System.Int32,ABenNet.NetCore.WebApi.Models.WeatherForecast)">
+            <summary>
+            SubmitByFromBody复杂参数传递
+            </summary>
+            <param name="id"></param>
+            <param name="weatherForecast"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Controllers.v2.WeatherForecastController.Error">
+            <summary>
+            这是一个测试错误的方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ABenNet.NetCore.WebApi.Extension.ApiVersion.ApiVersionExtension.AddApiVersion(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add api version support
+            </summary>
+            <param name="services">The instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+        </member>
+        <member name="T:ABenNet.NetCore.WebApi.Middlewares.ExceptionHandlerMiddleware">
+            <summary>
+            封装ExceptionHandlerMiddeware中间件，拦截程序报错，返回自定义实体。
+            </summary>
+        </member>
+        <member name="T:ABenNet.NetCore.WebApi.Models.ApiResponseTyppeAttribute">
+            <summary>
+            接口成功时的输出模型定义
+            </summary>
+        </member>
+        <member name="T:ABenNet.NetCore.WebApi.Models.ResponseResult`1">
+            <summary>
+            api返回T结果
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.ResponseResult`1.Code">
+            <summary>
+            消息编码
+            </summary>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.ResponseResult`1.Message">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.ResponseResult`1.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:ABenNet.NetCore.WebApi.Models.ResponseResult">
+            <summary>
+            api返回结果
+            </summary>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.ResponseResult.Code">
+            <summary>
+            消息编码
+            </summary>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.ResponseResult.Message">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="T:ABenNet.NetCore.WebApi.Models.ResponseResultCode">
+            <summary>
+            api返回结果状态码
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.Failure">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.RequestFailure">
+            <summary>
+            请求失败
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.NoAuthority">
+            <summary>
+            权限不足
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.NoAuthorization">
+            <summary>
+            Token验证失败
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.DBChangeFailure">
+            <summary>
+            数据库操作失败
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.TokenFailure">
+            <summary>
+            Token失效
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.ParameterError">
+            <summary>
+            参数错误
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.EmptyParameter">
+            <summary>
+            参数值为空
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.Empty">
+            <summary>
+            数据不存在
+            </summary>
+        </member>
+        <member name="F:ABenNet.NetCore.WebApi.Models.ResponseResultCode.UserDisabled">
+            <summary>
+            用户已警用
+            </summary>
+        </member>
+        <member name="T:ABenNet.NetCore.WebApi.Models.WeatherForecast">
+            <summary>
+            天气预报实体
+            </summary>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.WeatherForecast.Date">
+            <summary>
+            /播报日期
+            </summary>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.WeatherForecast.TemperatureC">
+            <summary>
+            气温C
+            </summary>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.WeatherForecast.TemperatureF">
+            <summary>
+            气温F
+            </summary>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.WeatherForecast.Summary">
+            <summary>
+            概要
+            </summary>
+        </member>
+        <member name="P:ABenNet.NetCore.WebApi.Models.WeatherForecast.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+    </members>
+</doc>

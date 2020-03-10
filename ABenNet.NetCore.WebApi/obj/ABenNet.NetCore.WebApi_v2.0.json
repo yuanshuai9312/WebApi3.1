@@ -1,0 +1,309 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ABenNetCoe.WebAPI.ApiVersion",
+    "description": "ABenNetCoe.WebAPI.ApiVersion 接口文档",
+    "contact": {
+      "name": "ABenNet ASP.NET Core WebApi",
+      "url": "https://abennet.com",
+      "email": "abennt@163.com"
+    },
+    "version": "2.0"
+  },
+  "paths": {
+    "/api/v2.0/WeatherForecast/Get": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "获取天气预报详细信息",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecastIEnumerableResponseResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2.0/WeatherForecast/SubmitByFromQueryParams": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "SubmitByFromQueryJObject多简单类型参数",
+        "parameters": [
+          {
+            "name": "orderid",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ordername",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseResult`1"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "SubmitByFromQueryJObject多简单类型参数",
+        "parameters": [
+          {
+            "name": "orderid",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ordername",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseResult`1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2.0/WeatherForecast/SubmitByFromBody": {
+      "post": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "SubmitByFromBody复杂参数传递",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WeatherForecast"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WeatherForecast"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WeatherForecast"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecastResponseResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2.0/WeatherForecast/Error": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "这是一个测试错误的方法",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "/播报日期",
+            "format": "date-time"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "description": "气温C",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "description": "气温F",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "description": "概要",
+            "nullable": true
+          },
+          "version": {
+            "type": "string",
+            "description": "版本号",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "天气预报实体"
+      },
+      "WeatherForecastIEnumerableResponseResult": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "消息编码",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "description": "错误消息",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WeatherForecast"
+            },
+            "description": "数据",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "api返回T结果"
+      },
+      "T": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "ResponseResult`1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "消息编码",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "description": "错误消息",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/T"
+          }
+        },
+        "additionalProperties": false,
+        "description": "api返回T结果"
+      },
+      "WeatherForecastResponseResult": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "消息编码",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "description": "错误消息",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/WeatherForecast"
+          }
+        },
+        "additionalProperties": false,
+        "description": "api返回T结果"
+      },
+      "ResponseResult": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "消息编码",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "description": "错误消息",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "api返回结果"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "WeatherForecast",
+      "description": "天气预报2.0"
+    }
+  ]
+}
